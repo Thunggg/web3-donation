@@ -1,19 +1,31 @@
 "use client"
 
 import MainLayout from "@/components/layout/main-layout"
-import { Box } from "@chakra-ui/react"
 import { useColorMode, useColorModeValue } from "@/components/ui/color-mode"
+import { ClientOnly, IconButton, Skeleton, Box, Flex, Container } from "@chakra-ui/react"
+import { LuMoon, LuSun } from "react-icons/lu"
 
 export default function Home() {
-  const bg = useColorModeValue("red.500", "red.200")
-  const color = useColorModeValue("white", "gray.800")
+  const { toggleColorMode, colorMode, setColorMode } = useColorMode()
 
   return (
     <>
       <MainLayout>
-        <Box color="danger" fontFamily="body">
-          Hello World
-        </Box>
+        <Container>
+          <Flex
+            justifyContent={"space-between"}
+            alignItems={"center"}
+          >
+            <Box>
+              SPIN MASTER
+            </Box>
+            <Box>
+              <IconButton onClick={toggleColorMode} variant="outline" size="sm" color="iconColor" bg="iconBg" _hover={{ bg: "iconBgHover", color: "iconColorHover" }}>
+                {colorMode === "light" ? <LuSun /> : <LuMoon />}
+              </IconButton>
+            </Box>
+          </Flex>
+        </Container>
       </MainLayout>
     </>
   )
