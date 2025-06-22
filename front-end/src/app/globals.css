@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* AppKit Light Mode Variables */
+:root {
+  --w3m-accent: #00BB7F;
+  --w3m-color-mix: #00BB7F;
+  --w3m-color-mix-strength: 20;
+  
+  /* Custom text colors for light mode */
+  --wui-color-fg-100: #000000;
+  --wui-color-fg-200: #333333;
+  --wui-color-fg-300: #666666;
+  --wui-color-bg-100: #ffffff;
+  --wui-color-bg-200: #f5f5f5;
+}
+
+/* AppKit Dark Mode Variables */
+[data-theme="dark"] {
+  --w3m-accent: #00BB7F;
+  --w3m-color-mix: #00BB7F;
+  --w3m-color-mix-strength: 15;
+  
+  /* Custom text colors for dark mode */
+  --wui-color-fg-100: #ffffff !important;
+  --wui-color-fg-200: #e0e0e0 !important;
+  --wui-color-fg-300: #cccccc !important;
+  --wui-color-bg-100: #1a1a1a !important;
+  --wui-color-bg-200: #2a2a2a !important;
+}
+
+/* Override AppKit button styles */
+appkit-button {
+  /* Light mode text */
+  --wui-color-fg-100: var(--wui-color-fg-100) !important;
+  --wui-color-fg-200: var(--wui-color-fg-200) !important;
+  --wui-color-fg-300: var(--wui-color-fg-300) !important;
+}
+
+/* Dark mode specific overrides */
+[data-theme="dark"] appkit-button {
+  --wui-color-fg-100: #ffffff !important;
+  --wui-color-fg-200: #e0e0e0 !important;
+  --wui-color-fg-300: #cccccc !important;
+}

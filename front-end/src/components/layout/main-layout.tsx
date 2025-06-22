@@ -3,6 +3,7 @@
 import { ClientOnly, IconButton, Skeleton, Box, Flex } from "@chakra-ui/react"
 import { useColorMode } from "@/components/ui/color-mode"
 import { LuMoon, LuSun } from "react-icons/lu"
+import { AppKit } from "../../config/appkit";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -12,7 +13,9 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
                 color="fg"
                 h="100vh"
             >
-                {children}
+                <AppKit>
+                    {children}
+                </AppKit>
             </Box>
         </ClientOnly>
     )

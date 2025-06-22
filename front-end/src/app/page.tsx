@@ -1,12 +1,13 @@
 "use client"
 
 import MainLayout from "@/components/layout/main-layout"
-import { useColorMode, useColorModeValue } from "@/components/ui/color-mode"
-import { ClientOnly, IconButton, Skeleton, Box, Flex, Container } from "@chakra-ui/react"
+import { useColorMode } from "@/components/ui/color-mode"
+import { IconButton, Box, Flex, Container } from "@chakra-ui/react"
 import { LuMoon, LuSun } from "react-icons/lu"
 
+
 export default function Home() {
-  const { toggleColorMode, colorMode, setColorMode } = useColorMode()
+  const { toggleColorMode, colorMode } = useColorMode()
 
   return (
     <>
@@ -15,14 +16,23 @@ export default function Home() {
           <Flex
             justifyContent={"space-between"}
             alignItems={"center"}
+            padding={"20px 0px"}
           >
-            <Box>
-              SPIN MASTER
+            <Box
+              fontWeight={900}
+              textTransform={"uppercase"}
+            >
+              thunggg charity
             </Box>
             <Box>
-              <IconButton onClick={toggleColorMode} variant="outline" size="sm" color="iconColor" bg="iconBg" _hover={{ bg: "iconBgHover", color: "iconColorHover" }}>
-                {colorMode === "light" ? <LuSun /> : <LuMoon />}
-              </IconButton>
+              <Flex gap={2}>
+                <appkit-button
+
+                />
+                <IconButton onClick={toggleColorMode} variant="outline" size="sm" color="iconColor" bg="iconBg" _hover={{ bg: "iconBgHover", color: "iconColorHover" }}>
+                  {colorMode === "light" ? <LuSun /> : <LuMoon />}
+                </IconButton>
+              </Flex>
             </Box>
           </Flex>
         </Container>
