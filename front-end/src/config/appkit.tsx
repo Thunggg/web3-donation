@@ -5,7 +5,7 @@ import { Ethers5Adapter } from "@reown/appkit-adapter-ethers5";
 import { sepolia } from "@reown/appkit/networks";
 
 // 1. Get projectId at https://cloud.reown.com
-const projectId = process.env.NEXT_PUBLIC_CLOUD_REOWN_ID as string;
+const projectId = "a32e8efceecf6166fb131c0d3cf82ebe";
 
 // 2. Create a metadata object
 const metadata = {
